@@ -1,4 +1,5 @@
-import { Github, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Section, Eyebrow } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { additionalProjects } from "@/data/content";
@@ -32,7 +33,8 @@ export function AdditionalProjects() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-sm text-text-secondary hover:text-text-primary transition-colors"
                   >
-                    <Github size={15} strokeWidth={1.5} /> Code
+                    {/* @ts-expect-error React 19 types */}
+                    <SiGithub size={14} /> Code
                   </a>
                 )}
                 {p.live && (

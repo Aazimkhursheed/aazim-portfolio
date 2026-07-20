@@ -1,11 +1,12 @@
-import { Github, Linkedin, Mail, Code2, ArrowUpRight, GitCommitHorizontal } from "lucide-react";
+import { Mail, Code2, ArrowUpRight, GitCommitHorizontal } from "lucide-react";
+import { SiGithub, SiLinkedin } from "@icons-pack/react-simple-icons";
 import { profile } from "@/data/content";
 import { LinkButton } from "@/components/ui/Button";
 import { useGithubActivity } from "@/hooks/useGithubActivity";
 
 const socials = [
-  { href: profile.links.github, label: "GitHub", icon: Github },
-  { href: profile.links.linkedin, label: "LinkedIn", icon: Linkedin },
+  { href: profile.links.github, label: "GitHub", icon: SiGithub },
+  { href: profile.links.linkedin, label: "LinkedIn", icon: SiLinkedin },
   { href: profile.links.leetcode, label: "LeetCode", icon: Code2 },
   { href: `mailto:${profile.email}`, label: "Email", icon: Mail },
 ];
@@ -50,6 +51,7 @@ export function Hero() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-text-secondary hover:text-text-primary transition-colors"
                 >
+                  {/* @ts-expect-error React 19 types */}
                   <s.icon size={16} strokeWidth={1.5} />
                   {s.label}
                 </a>

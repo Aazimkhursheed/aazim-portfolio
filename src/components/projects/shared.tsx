@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import { Github, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 import type { FeaturedProject } from "@/data/content";
 import { cn } from "@/lib/utils";
 
@@ -34,7 +35,8 @@ export function ProjectLinks({ project }: { project: FeaturedProject }) {
         rel="noopener noreferrer"
         className="inline-flex items-center gap-1.5 text-sm text-text-secondary hover:text-text-primary transition-colors"
       >
-        <Github size={15} strokeWidth={1.5} /> GitHub
+        {/* @ts-expect-error React 19 types */}
+        <SiGithub size={15} /> GitHub
       </a>
       <a
         href={project.live}

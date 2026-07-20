@@ -1,11 +1,12 @@
-import { Github, Linkedin, Mail, Code2, ArrowUpRight, FileText } from "lucide-react";
+import { Mail, Code2, ArrowUpRight, FileText } from "lucide-react";
+import { SiGithub, SiLinkedin } from "@icons-pack/react-simple-icons";
 import { Reveal } from "@/components/ui/Reveal";
 import { profile } from "@/data/content";
 
 const links = [
   { href: `mailto:${profile.email}`, label: profile.email, icon: Mail },
-  { href: profile.links.github, label: "GitHub", icon: Github },
-  { href: profile.links.linkedin, label: "LinkedIn", icon: Linkedin },
+  { href: profile.links.github, label: "GitHub", icon: SiGithub },
+  { href: profile.links.linkedin, label: "LinkedIn", icon: SiLinkedin },
   { href: profile.links.leetcode, label: "LeetCode", icon: Code2 },
   { href: profile.links.resume, label: "Resume", icon: FileText },
 ];
@@ -30,6 +31,7 @@ export function Contact() {
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-3 text-xl sm:text-2xl font-display font-medium text-text-invert-primary"
                 >
+                  {/* @ts-expect-error React 19 types */}
                   <l.icon size={20} strokeWidth={1.5} />
                   {l.label}
                   <ArrowUpRight
