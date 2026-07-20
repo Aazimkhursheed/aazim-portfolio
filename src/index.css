@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/Geist-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/Geist-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* ---- color tokens ---- */
+  --color-bg-base: #0a0a0b;
+  --color-bg-raised: #131316;
+  --color-bg-inset: #000000;
+  --color-bg-invert: #f3f2ee;
+
+  --color-border-subtle: #1f1f23;
+  --color-border-default: #2a2a2e;
+  --color-border-invert: #d8d6cf;
+
+  --color-text-primary: #ededef;
+  --color-text-secondary: #a1a1aa;
+  --color-text-tertiary: #86868d;
+  --color-text-invert-primary: #101012;
+  --color-text-invert-secondary: #45454a;
+
+  --color-accent-green: #3ecf8e;
+  --color-accent-cyan: #4cc9f0;
+  --color-accent-blue: #5b8def;
+
+  /* ---- typography tokens ---- */
+  --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* ---- spacing scale (8px base) ---- */
+  --spacing-section-desktop: 10rem;
+  --spacing-section-tablet: 6rem;
+  --spacing-section-mobile: 4rem;
+
+  --container-content: 70rem;
+
+  /* ---- easing ---- */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border-subtle);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    background-color: var(--color-bg-base);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+  }
+
+  ::selection {
+    background-color: var(--color-accent-blue);
+    color: #0a0a0b;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-text-primary);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg-base);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border-default);
+    border-radius: 999px;
+  }
+}
+
+@utility section-shell {
+  max-width: var(--container-content);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@utility mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}
