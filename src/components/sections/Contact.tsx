@@ -1,5 +1,5 @@
 import { Mail, Code2, ArrowUpRight, FileText } from "lucide-react";
-import { SiGithub, SiLinkedin } from "@icons-pack/react-simple-icons";
+import { SiGithub, SiLinkedin } from "@/components/icons/BrandIcons";
 import { Reveal } from "@/components/ui/Reveal";
 import { profile } from "@/data/content";
 
@@ -31,7 +31,6 @@ export function Contact() {
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-3 text-xl sm:text-2xl font-display font-medium text-text-invert-primary"
                 >
-                  {/* @ts-expect-error React 19 types */}
                   <l.icon size={20} strokeWidth={1.5} />
                   {l.label}
                   <ArrowUpRight
